@@ -42,6 +42,9 @@ class FragmentCadastro : Fragment() {
 
     private fun onFinishForm() {
         val activityContract = requireActivity() as ActivityContract
+        //requireActivity -> retorna referencia da activity q frag faz parte
+        //posso fazer cast da ref para interface q ela implementa
+        //tenho acesso apenas a funções do tipo q foi feito cast
 
         val nome = campoNome?.text.toString()
         val email = campoEmail?.text.toString()
@@ -65,6 +68,7 @@ class FragmentCadastro : Fragment() {
                 nomeInputLayout?.error = null
                 senhaInputLayout?.error = null
                 activityContract.onFinishForm(nome, email, tel, senha)
+                //chama a fun onfinishform da main activity
             }
         }
     }

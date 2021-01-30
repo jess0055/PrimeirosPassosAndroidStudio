@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".FragmentPerfil">
+    android:gravity="center">
 
     <TextView
         android:id="@+id/nome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:gravity="center"
+        tools:text="Name: Jess"/>
 
     <Space
         android:layout_width="wrap_content"
@@ -20,7 +21,8 @@
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:gravity="center"
+        tools:text="Email"/>
 
     <Space
         android:layout_width="wrap_content"
@@ -30,7 +32,8 @@
         android:id="@+id/telefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:gravity="center"
+        tools:text="Telefone"/>
 
     <Space
         android:layout_width="wrap_content"
@@ -40,5 +43,6 @@
         android:id="@+id/senha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center" />
+        android:gravity="center"
+        tools:text="Senha"/>
 </LinearLayout>

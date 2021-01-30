@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".FragmentCadastro"
     android:orientation="vertical">
-
+    
     <!--nome-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/nome_input_layout"
@@ -107,5 +107,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"/>
     </LinearLayout>
+
 
 </LinearLayout>

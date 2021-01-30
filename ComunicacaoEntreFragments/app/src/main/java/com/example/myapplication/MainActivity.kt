@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity(), ActivityContract {
     override fun onFinishForm(nome: String, email: String, telefone: String, senha: String) {
         fragmentProfile = supportFragmentManager.findFragmentById(R.id.fragment_perfil) as FragmentPerfil
         fragmentProfile.setData(nome, email, telefone, senha)
-
        // hideKeyboard()
     }
 
