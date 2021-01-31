@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Cadastro</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nome_empresa">Nome/Empresa</string>
+    <string name="email">Email</string>
+    <string name="telefone">Telefone</string>
+    <string name="senha">Senha</string>
+    <string name="confirmar_senha">Confirmar Senha</string>
+    <string name="cadastrar">Cadastrar</string>
+</resources>
