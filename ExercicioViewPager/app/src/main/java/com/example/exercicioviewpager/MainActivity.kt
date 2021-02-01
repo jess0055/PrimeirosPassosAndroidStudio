@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getFragments(): List<Fragment> {
 
-        var salgados = arrayListOf("Coxinha - R$ 1.99", "Risoli - R$ 1.99", "Espiha - R$ 1.99","Kibe - R$ 1.99", "Enrolado - R$ 1.99")
+        var salgados = arrayListOf("Coxinha - R$ 1.99", "Risole - R$ 1.99", "Esfiha - R$ 1.99","Kibe - R$ 1.99", "Pastel - R$ 1.99")
         var lanches = arrayListOf("Burguer - R$ 1.99", "X-Bacon - R$ 1.99", "X-Salada - R$ 1.99", "Risoli - R$ 1.99", "X-Tudo - R$ 1.99")
         var bebidas = arrayListOf("Coca - R$ 1.99", "Guaraná - R$ 1.99", "Fanta - R$ 1.99", "Pepsi - R$ 1.99", "Suco - R$ 1.99")
 

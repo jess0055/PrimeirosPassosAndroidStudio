@@ -35,8 +35,15 @@ class PlaceholderFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         arguments?.let {
-            val dados = it.getStringArrayList(LIST_VIEW)!!.toList()
-            var adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, dados)
+
+            var adapter = it.getStringArrayList(LIST_VIEW)?.let { it1 ->
+                ArrayAdapter(
+                        requireContext(),
+                        android.R.layout.simple_list_item_1,
+                        it1.toArray()
+                )
+            }
+
             view.findViewById<ListView>(R.id.listview).adapter = adapter
         }
 
