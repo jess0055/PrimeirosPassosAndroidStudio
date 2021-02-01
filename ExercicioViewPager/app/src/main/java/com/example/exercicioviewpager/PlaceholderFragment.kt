@@ -4,6 +4,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
@@ -12,15 +14,14 @@ import androidx.fragment.app.Fragment
 class PlaceholderFragment : Fragment() {
 
     companion object {
-        const val FRAGMENT_NAME = "fragment_name"
-        const val BACKGROUND_COLOR = "background_color"
+
+        const val LIST_VIEW = "listview"
 
         @JvmStatic
-        fun newInstance(name: String, backgroundColor: Int): PlaceholderFragment {
+        fun newInstance(itens: ArrayList<String>): PlaceholderFragment {
             return PlaceholderFragment().apply {
                 arguments = Bundle().apply {
-                    putString(FRAGMENT_NAME, name)
-                    putInt(BACKGROUND_COLOR, backgroundColor)
+                    putStringArrayList(LIST_VIEW, itens)
                 }
             }
         }
@@ -32,17 +33,11 @@ class PlaceholderFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+
         arguments?.let {
-            view.findViewById<TextView>(R.id.fragment_name).text =
-                it.getString(FRAGMENT_NAME, "Empty name")
-            view.findViewById<ConstraintLayout>(R.id.parent).setBackgroundColor(
-                ContextCompat.getColor(
-                    requireContext(), it.getInt(
-                        BACKGROUND_COLOR,
-                        R.color.black
-                    )
-                )
-            )
+            val dados = it.getStringArrayList(LIST_VIEW)!!.toList()
+            var adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, dados)
+            view.findViewById<ListView>(R.id.listview).adapter = adapter
         }
 
         super.onViewCreated(view, savedInstanceState)
