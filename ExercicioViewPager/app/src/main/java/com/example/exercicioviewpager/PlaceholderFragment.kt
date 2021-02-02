@@ -10,18 +10,20 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class PlaceholderFragment : Fragment() {
 
     companion object {
 
-        const val LIST_VIEW = "listview"
+        const val RECYCLE_VIEW = "recycleview"
 
         @JvmStatic
-        fun newInstance(itens: ArrayList<String>): PlaceholderFragment {
+        fun newInstance(itens: List<ItemCardapio>): PlaceholderFragment {
             return PlaceholderFragment().apply {
                 arguments = Bundle().apply {
-                    putStringArrayList(LIST_VIEW, itens)
+                  //  putSerializable(RECYCLE_VIEW, itens)
                 }
             }
         }
@@ -34,17 +36,11 @@ class PlaceholderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
+
         arguments?.let {
-
-            var adapter = it.getStringArrayList(LIST_VIEW)?.let { it1 ->
-                ArrayAdapter(
-                        requireContext(),
-                        android.R.layout.simple_list_item_1,
-                        it1.toArray()
-                )
-            }
-
-            view.findViewById<ListView>(R.id.listview).adapter = adapter
+           val rc = view.findViewById<RecyclerView>(R.id.recycler_view)
+            rc.layoutManager = LinearLayoutManager(requireContext())
+           // rc.adapter = ItemListaAdapter(it.getSerializable(RECYCLE_VIEW))
         }
 
         super.onViewCreated(view, savedInstanceState)

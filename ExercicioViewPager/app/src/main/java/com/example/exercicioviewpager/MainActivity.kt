@@ -4,6 +4,8 @@ import SectionsPagerAdapter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -15,9 +17,11 @@ class MainActivity : AppCompatActivity() {
     val tabs by lazy { findViewById<TabLayout>(R.id.tabs) }
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
 
         val fragments = getFragments()
         val sectionsPagerAdapter = SectionsPagerAdapter(fragments, this)
@@ -36,15 +40,22 @@ class MainActivity : AppCompatActivity() {
 
     private fun getFragments(): List<Fragment> {
 
-        var salgados = arrayListOf("Coxinha - R$ 1.99", "Risole - R$ 1.99", "Esfiha - R$ 1.99","Kibe - R$ 1.99", "Pastel - R$ 1.99")
-        var lanches = arrayListOf("Burguer - R$ 1.99", "X-Bacon - R$ 1.99", "X-Salada - R$ 1.99", "Risoli - R$ 1.99", "X-Tudo - R$ 1.99")
-        var bebidas = arrayListOf("Coca - R$ 1.99", "Guaraná - R$ 1.99", "Fanta - R$ 1.99", "Pepsi - R$ 1.99", "Suco - R$ 1.99")
-
         return listOf(
-                PlaceholderFragment.newInstance(salgados),
-                PlaceholderFragment.newInstance(lanches),
-                PlaceholderFragment.newInstance(bebidas)
+                PlaceholderFragment.newInstance(getItensCardapidio()),
+                PlaceholderFragment.newInstance(getItensCardapidio()),
+                PlaceholderFragment.newInstance(getItensCardapidio())
         )
+    }
+
+    private fun getItensCardapidio(): List<ItemCardapio> {
+        val itensList = mutableListOf<ItemCardapio>()
+
+        for (index in 0..4) {
+            val item = ItemCardapio("Produto $index", "Valor $index")
+            itensList.add(item)
+        }
+
+        return itensList.toList()
     }
 
 }
