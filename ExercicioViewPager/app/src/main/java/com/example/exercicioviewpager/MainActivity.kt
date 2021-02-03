@@ -41,17 +41,17 @@ class MainActivity : AppCompatActivity() {
     private fun getFragments(): List<Fragment> {
 
         return listOf(
-                PlaceholderFragment.newInstance(getItensCardapidio()),
-                PlaceholderFragment.newInstance(getItensCardapidio()),
-                PlaceholderFragment.newInstance(getItensCardapidio())
+                PlaceholderFragment.newInstance(getItensCardapidio("Coxinha")),
+                PlaceholderFragment.newInstance(getItensCardapidio("Burguer")),
+                PlaceholderFragment.newInstance(getItensCardapidio("Coca"))
         )
     }
 
-    private fun getItensCardapidio(): List<ItemCardapio> {
+    private fun getItensCardapidio(descricao : String): List<ItemCardapio> {
         val itensList = mutableListOf<ItemCardapio>()
 
-        for (index in 0..4) {
-            val item = ItemCardapio("Produto $index", "Valor $index")
+        for (index in 0..30) {
+            val item = ItemCardapio("$descricao $index", "Valor $index")
             itensList.add(item)
         }
 
