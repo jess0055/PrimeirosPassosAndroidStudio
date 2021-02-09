@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">SettingsSharedPrefs</string>
+    <string name="notification">Notificações</string>
+    <string name="downloads">Downloads</string>
+    <string name="somente_wifi">Somente WiFi</string>
+    <string name="permitir_notifica_es">Permitir notificações</string>
+    <string name="smart_downloads">Smart Downloads</string>
+</resources>
