@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExercicioCamera</string>
+    <string name="photoname">Photo Name</string>
+    <string name="photodescription">Photo Description</string>
+</resources>
